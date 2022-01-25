@@ -19,4 +19,4 @@ Add the files from this repository to the cloned directory.
 
 Download [some exemplary data](http://agamenon.tsc.uah.es/Asignaturas/it/rd/apuntes/GPSdata-DiscreteComponents-fs38_192-if9_55.bin) to the cloned directory.
 
-Run demo_cold_snapshot.py with Python 3, e.g., open a terminal and execute `python3 demo_cold_snapshot.py`.
+Run demo_cold_snapshot.py with Python 3, e.g., open a terminal and execute `python3 demo_cold_snapshot.py` in the cloned directory.
