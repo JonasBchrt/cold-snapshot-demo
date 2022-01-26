@@ -9,6 +9,8 @@ Algorithm adapted from:
 > Ignacio Fernández-Hernández and Kai Borre. “Snapshot positioning without initial
 information”. In: *GPS Solutions* 20.4 (Mar. 2016), pp. 605–616
 
+There is a [discussion in another repository](https://github.com/JonasBchrt/snapshot-gnss-algorithms/discussions/2) with more details on my cold snapshot GNSS implementation.
+
 ## Setup
 
 Clone [snapshot-gnss-algorithms](https://github.com/JonasBchrt/snapshot-gnss-algorithms) to your machine.
