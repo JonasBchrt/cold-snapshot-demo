@@ -2,7 +2,7 @@
 
 *Author: Jonas Beuchert*
 
-This script shows how to obtain a GNSS position fix from an 11-millisecond raw GNSS signal snapshot without any prior knowledge about the position of the receiver and only coarse knowledge about the time. The algorithm is adapted from:
+This script shows how to obtain a GNSS position fix from an 11-millisecond raw GNSS signal snapshot without any prior knowledge about the position of the receiver and only coarse knowledge about the time. The algorithm is adapted from
 
 > Ignacio Fernández-Hernández and Kai Borre. “Snapshot positioning without initial
 information”. In: *GPS Solutions* 20.4 (Mar. 2016), pp. 605–616
