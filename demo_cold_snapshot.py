@@ -20,10 +20,10 @@ file_name = os.path.join(data_path,
 # Data type used to store one sample
 data_type = "int8"
 # Decimation factor for resampling
-decimation_factor = 7
+decimation_factor = 7  # 1
 # Intermediate, sampling, and code frequencies
-intermediate_frequency = 9.548e6 / decimation_factor  # [Hz]
 sampling_frequency = 38.192e6 / decimation_factor  # [Hz]
+intermediate_frequency = 9.548e6  # [Hz]
 code_frequency_basis = 1.023e6  # [Hz]
 # Number of chips in a code period
 code_length = 1023
@@ -56,11 +56,9 @@ acquired_sv, acquired_snr, acquired_doppler, acquired_codedelay, \
                      fine_freq=False,  # True
                      gnss='gps',
                      l1c=False,
-                     snr_threshold=18.0)
+                     snr_threshold=12.0)  # 18.0
 # Visible / acquired satellites, their Doppler shifts, and code phases
-# doppler_shifts = - (acquired_fine_freq
-#                     - intermediate_frequency)  # [Hz] (sign change!)
-doppler_shifts = - acquired_doppler  # [Hz] (sign change!)
+# doppler_shifts = acquired_fine_freq - intermediate_frequency  # [Hz]
 code_phases = (samples_per_code - acquired_codedelay) / sampling_frequency
 # %% 4.) Ephemeris
 # Time interval to search
@@ -76,7 +74,7 @@ file_path = os.path.join(download_dir, file_name)  # Path to ephemeris file
 eph = ep.rinexe(file_path)  # Load ephemeris
 # %% 5.) Cold snapshot
 state, res, t = ctn.cold_snapshot(code_phases,
-                                  doppler_shifts,
+                                  acquired_doppler,
                                   np.datetime64(t_min),
                                   np.datetime64(t_max),
                                   eph,
