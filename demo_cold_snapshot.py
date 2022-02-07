@@ -60,18 +60,21 @@ acquired_sv, acquired_snr, acquired_doppler, acquired_codedelay, \
 # Visible / acquired satellites, their Doppler shifts, and code phases
 # doppler_shifts = acquired_fine_freq - intermediate_frequency  # [Hz]
 code_phases = (samples_per_code - acquired_codedelay) / sampling_frequency
-# %% 4.) Ephemeris
+# %% 4.) Ephemerides
 # Time interval to search
 t_min = dt.datetime(2005, 5, 7, 12, 0, 0)
 t_max = dt.datetime(2005, 5, 7, 23, 59, 59)
-# Load the ephemeris:
+# Navigation data filename
 yyyy = t_min.year  # 4-digit year
 ddd = t_min.timetuple().tm_yday  # Day of the year
 yy = yyyy % 100  # 2-digit year
 file_name = "brdc{:03d}0.{:02d}n".format(ddd, yy)
-download_dir = ""  # Directory where unpacked ephemeris data is stored
-file_path = os.path.join(download_dir, file_name)  # Path to ephemeris file
-eph = ep.rinexe(file_path)  # Load ephemeris
+# Directory where unpacked ephemerides data is stored
+download_dir = ""
+# Path to ephemerides file
+file_path = os.path.join(download_dir, file_name)
+# Load ephemerides
+eph = ep.rinexe(file_path)
 # %% 5.) Cold snapshot
 state, res, t = ctn.cold_snapshot(code_phases,
                                   acquired_doppler,
