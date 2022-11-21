@@ -17,7 +17,7 @@ Follow the setup instructions for snapshot-gnss-algorithms.
 
 Add the files from this repository to the cloned directory.
 
-Download [some exemplary data](http://agamenon.tsc.uah.es/Asignaturas/it/rd/apuntes/GPSdata-DiscreteComponents-fs38_192-if9_55.bin) to the cloned directory.
+Download some exemplary data to the cloned directory. Use the file *GPSdata-DiscreteComponents-fs38_192-if9_55.bin* from the *Extras Archive File* [here](https://extras.springer.com/?query=978-0-8176-4390-4).
 
 Run demo_cold_snapshot.py with Python 3, e.g., open a terminal and execute `python demo_cold_snapshot.py` in the cloned directory.
 
